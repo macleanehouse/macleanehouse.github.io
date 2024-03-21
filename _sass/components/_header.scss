@@ -47,7 +47,7 @@ header#site-header.home,
 header#site-header.notfound {  
      
     p.building {
-        padding: 25vh 0 0;
+        padding: 25vh 0 $container-padding * 2;
         font-size: 15vw;
         @include tablet() {
             font-size: 100px;
