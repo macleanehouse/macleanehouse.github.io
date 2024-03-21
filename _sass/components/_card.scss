@@ -1,0 +1,73 @@
+.card,
+fieldset,
+.fieldset {
+    padding: $container-padding;
+    @include tablet-up() {
+        padding: $container-padding * 2;
+    }    
+    
+    background: var(--background);
+    box-shadow: drop-shadow(1);
+    
+    margin-bottom: $container-padding * 2;
+}
+
+.problems {
+    display: block;
+    position: relative;
+    min-height: 100%;
+    
+    margin-bottom: $container-padding * 2;
+}
+
+.problem {
+    display: grid;
+    position: relative;
+    
+    margin-bottom: $container-padding * 2;
+    
+    grid-template: 
+        "prob prob"
+        "i1 where"
+        "i2 what"
+        "i3 when";
+    grid-template-columns: auto 1fr;
+    grid-gap: $container-padding;
+    
+    @include tablet-up {
+        grid-template: 
+            "prob  prob prob prob prob prob"
+            "i1 where i2 what i3 when";
+        grid-template-columns: auto 1fr auto 1fr auto 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    p,
+    .small,
+    .icon {
+        padding: 0;
+        align-self: center;
+    }
+    
+    .icon.where {
+        grid-area: i1;
+    }
+    .icon.what {
+        grid-area: i2;
+    }
+    .icon.when {
+        grid-area: i3;
+    }
+    .prob {
+        grid-area: prob;
+    }
+    .where {
+        grid-area: where;
+    }
+    .when {
+        grid-area: when;
+    }
+    .what {
+        grid-area: what;
+    }
+}

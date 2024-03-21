@@ -1,0 +1,67 @@
+div.radio-item {
+    display: inline-flex;
+    position: relative;
+    margin: $container-padding 0;
+    width: 100%;
+}
+
+input[type="radio"] {
+    // Allow the input to sit above the label, enabling its proper detection
+    // when exploring by touch or using automation tools like Selenium
+    z-index: 1;
+    width: form("touch-target-size");
+    height: form("touch-target-size");
+    margin: 0 $container-padding * 0.5 0 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="radio"] + label {
+    align-self: left;
+    
+    // Ensure that the width of the label is never more than the width of the
+    // container minus the input width minus the padding on either side of
+    // the label. This prevents the label from going onto the next line due to
+    // __item using flex-wrap because we want hints on a separate line
+    max-width: calc(100% - #{form("radios-label-padding-left-right") + form("radios-size") + $container-padding});
+    margin-bottom: 0;
+    padding: 0 $container-padding * 0.5;
+    cursor: pointer;
+    // remove 300ms pause on mobile
+    touch-action: manipulation;
+    font-weight: 400;
+    
+    &:before {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: form("radios-size");
+        height: form("radios-size");
+        border: form("border-width") solid currentcolor;
+        border-radius: 50%;
+        background: transparent;
+    }
+    
+    &::after {
+        content: "";
+        
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        
+        width: 0;
+        height: 0;
+        
+        border: (form("touch-target-size") * 0.25) solid currentcolor;
+        border-radius: 50%;
+        opacity: 0;
+        background: currentcolor;
+    }
+}
+
+// Selected state
+input[type="radio"]:checked  + label:after {
+    opacity: 1;
+}

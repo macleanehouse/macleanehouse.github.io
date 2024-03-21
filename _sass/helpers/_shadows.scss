@@ -1,0 +1,17 @@
+/// Get shadow
+
+@function shadow($shadow) {
+    @if not map-has-key($shadows, $shadow) {
+        @error "Unknown shadow `#{$shadow}`";
+    }
+
+    @return map-get($shadows, $shadow);
+}
+
+@function drop-shadow($shadow) {
+    @if not map-has-key($drop-shadows, $shadow) {
+        @error "Unknown shadow `#{$shadow}`";
+    }
+
+    @return map-get($drop-shadows, $shadow);
+}

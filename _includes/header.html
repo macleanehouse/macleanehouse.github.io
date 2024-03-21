@@ -1,0 +1,12 @@
+<header id="site-header" class="container {{ page.layout }}">
+	<p class="building">
+		{% if jekyll.environment == "development" %}
+			{% assign homelink = "//localhost:4000" %}
+		{% elsif site.header-url %}
+			{% assign homelink = "{{ site.header-url }}" %}
+		{% else %}
+			{% assign homelink = "//macleanehouse.com" %}
+		{% endif %}
+		<a href="{{ homelink }}">Macleane House</a>
+	</p>
+</header>

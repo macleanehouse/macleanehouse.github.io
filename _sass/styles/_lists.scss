@@ -1,0 +1,15 @@
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul,
+ol {
+    padding: 0 0 22px;
+    @include desktop {
+        padding: 0 0 30px 0px;
+    }
+}

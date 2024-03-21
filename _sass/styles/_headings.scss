@@ -1,0 +1,58 @@
+h1 {
+    @include typography($h1);
+    line-height: 1.0;
+    font-weight: 900;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    color: var(--white);
+    text-shadow: drop-shadow(2);
+}
+
+h2 {
+    @include typography($h2);
+    padding: $container-padding 0;
+
+    line-height: 1.15;
+    font-weight: 900;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    color: var(--white);
+    text-shadow: drop-shadow(1);
+    
+}
+
+h3 {
+    @include typography($h3);
+    line-height: 1.25;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+}
+
+h4 {
+    @include typography($h3);
+    line-height: 1.25;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+}
+
+h5 {
+    @include typography($h3);
+    line-height: 1.25;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+}

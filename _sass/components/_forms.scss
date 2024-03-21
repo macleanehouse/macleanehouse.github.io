@@ -1,0 +1,71 @@
+form {
+    display: inline-block;
+    position: relative;
+    min-height: 100%;
+    
+    @include clearfix();
+}
+
+fieldset,
+.fieldset {
+    display: block;
+    position: relative;
+    width: 100%;
+    
+    box-shadow: drop-shadow(2);
+    background: var(--background);
+    
+    &.radios {
+        padding-bottom: 0;
+        @include tablet-up() {
+            padding-bottom: $container-padding;
+        }
+    }
+}
+
+legend {
+    @include typography($h3, "default");
+    width: 100%;
+    padding: 0 0 $container-padding !important;
+    float: left;
+    font-weight: bold;
+    text-align: left;
+}
+
+span.sub-legend {
+    display: block;
+    text-align: center;
+}
+
+legend > span.sub-legend {
+    padding-top: 0 !important;
+}
+
+label {
+    @include typography($h4, "default");
+    display: block;
+    width: 100%;
+    line-height: form("radios-size");
+    
+    font-weight: 600;
+
+    &.hidden {
+        @include sr-only;
+    }
+
+    &.hidden ~ input {
+        margin: 0;
+    }
+}
+
+.label-hint {
+    @extend p;
+    display: block;
+    color: var(--labelHint-color);
+    padding-bottom: $container-padding * 0.5;
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+

@@ -1,0 +1,24 @@
+@mixin typography-common($font-family: default) {
+    font-family: $font-family-default;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    color: var(--color);
+}
+
+@mixin typography($font, $type: "default") {
+
+    @include typography-common;
+    
+    @each $style, $sizes in $font {
+        @include responsive(
+            $style,
+            map-get($sizes, "mobile"),
+            map-get($sizes, "tablet"),
+            map-get($sizes, "desktop")
+        )
+    }
+
+}

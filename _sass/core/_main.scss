@@ -1,0 +1,23 @@
+html,
+body {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    color: var(--color);
+    
+    font-kerning:  auto;
+    letter-spacing: normal;
+    background-color: var(--background);
+}
+
+body {
+    background-image: url('/assets/images/bricks.jpg');
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+main {
+    min-height: 100%;
+    @include clearfix();
+}

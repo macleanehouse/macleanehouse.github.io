@@ -1,0 +1,81 @@
+header#site-header {   
+
+    p.building,
+    address.address p {
+        position: relative;
+        display: inline-block;
+        z-index: 10000;
+        
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.1;
+        
+        color: var(--white);
+    }
+    p.building a {
+        display: inline;
+        width: 100%;
+        text-shadow: drop-shadow(1);
+        
+        &:link,
+        &:visited {
+            color: var(--white);
+            text-decoration: none;
+        }
+        &:hover {
+            background: var(--yellow);
+        }
+        &:focus {
+            color: var(--link-focusColor);
+            background: var(--link-focusBackground);
+            outline: 2px solid;
+            outline-color: var(--link-outlineColor);
+            text-decoration: none;
+        }
+        &:active {
+            text-decoration: none;
+        }
+    }
+    
+    address.address p {
+        text-shadow: drop-shadow(1);
+    }
+
+}
+
+header#site-header.home,
+header#site-header.notfound {  
+     
+    p.building {
+        padding: 25vh 0 0;
+        font-size: 15vw;
+        @include tablet() {
+            font-size: 100px;
+        }
+        @include desktop() {
+            font-size: 120px;
+        }
+        a {
+            text-shadow: drop-shadow(2) !important;
+        }
+    }
+    
+    address.address p {
+        font-size: 8vw;
+        padding: $container-padding * 2 0 $container-padding * 2;
+        @include tablet-up() {
+            font-size: 60px;
+        }
+    }
+    
+}
+
+header#site-header.page {  
+     
+    p.building {
+        text-shadow: drop-shadow(2);
+        padding: $container-padding 0 0;
+        font-size: 45px;
+    }
+    
+}

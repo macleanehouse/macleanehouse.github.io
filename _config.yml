@@ -1,0 +1,50 @@
+# Site settings
+title: "Macleane House"
+description: "Macleane House"
+author: "Macleane House"
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.macleanehouse.com"
+
+# Assets
+image-path: "/assets/images"
+css-path: "/assets/styles"
+js-path: "/assets/scripts"
+social-media-image: "/assets/images/site/social-media.png"
+favicon: "/favicon.ico"
+favicon-svg: "/assets/images/site/favicon.svg"
+favicon-pinned-svg: "/assets/images/site/favicon-pinned-svg.svg"
+favicon-large-png: "/assets/images/site/favicon-large-png.png"
+theme-colour: "#ffd700"
+
+# Cloudflare Analytics
+analytics: true
+cloudflare: "98e426f722244538b3ea0d9070cdeb22"
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:title/
+
+defaults:
+  - scope:
+      type: "pages"
+    values:
+      layout: page
+      categories: ["Page"]
+
+# Jekyll build settings
+permalink: pretty
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
